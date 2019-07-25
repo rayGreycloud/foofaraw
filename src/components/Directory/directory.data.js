@@ -1,4 +1,4 @@
-export const directoryData = [
+const DIRECTORY_DATA = [
   // {
   //   title: 'hats',
   //   imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
@@ -65,3 +65,5 @@ export const directoryData = [
     linkUrl: ''
   }
 ];
+
+export default DIRECTORY_DATA;

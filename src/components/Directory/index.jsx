@@ -1,18 +1,11 @@
 import React, { Component } from 'react';
 
-import MenuItem from '../Menu-item';
-import { directoryData } from './directory.data.js';
+import MenuItem from '../MenuItem';
+import DIRECTORY_DATA from './directory.data.js';
 
 class Directory extends Component {
-  // constructor(props) {
-  //   super(props);
-
-  //   this.state = {
-  //     sections: [...directoryData]
-  //   };
-  // }
   state = {
-    sections: [...directoryData]
+    sections: [...DIRECTORY_DATA]
   };
 
   render() {
