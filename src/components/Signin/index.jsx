@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import FormInput from '../FormInput';
+import Button from '../Button';
 
 export class Signin extends Component {
   state = {
@@ -30,8 +31,8 @@ export class Signin extends Component {
 
     return (
       <div className='sign-in'>
-        <h2>I already have an account</h2>
-        <span>Sign in with your email and password</span>
+        <h2 className='title'>I already have an account</h2>
+        <span className='subtitle'>Sign in with your email and password</span>
 
         <form onSubmit={this.handleSubmit}>
           <FormInput
@@ -50,7 +51,7 @@ export class Signin extends Component {
             value={password}
             required
           />
-          <input type='submit' value='Submit Form' readOnly />
+          <Button type='submit'>Sign In</Button>
         </form>
       </div>
     );
