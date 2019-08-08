@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import FormInput from '../FormInput';
 import Button from '../Button';
 
+import { signInWithGoogle } from '../../firebase/firebase.utils';
+
 export class Signin extends Component {
   state = {
     email: '',
@@ -51,7 +53,14 @@ export class Signin extends Component {
             value={password}
             required
           />
-          <Button type='submit'>Sign In</Button>
+          <div className='btn-group'>
+            <Button style={{ marginRight: '6px' }} type='submit'>
+              Sign In
+            </Button>
+            <Button className='btn' onClick={signInWithGoogle}>
+              Sign In with Google
+            </Button>
+          </div>
         </form>
       </div>
     );
