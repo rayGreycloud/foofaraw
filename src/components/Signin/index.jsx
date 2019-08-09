@@ -57,7 +57,7 @@ export class Signin extends Component {
             <Button style={{ marginRight: '6px' }} type='submit'>
               Sign In
             </Button>
-            <Button className='btn' onClick={signInWithGoogle}>
+            <Button className='btn btn-nobreak' onClick={signInWithGoogle}>
               Sign In with Google
             </Button>
           </div>
