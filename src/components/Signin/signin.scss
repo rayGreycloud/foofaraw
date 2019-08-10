@@ -1,5 +1,5 @@
 .sign-in {
-  width: 30vw;
+  width: 24rem;
   display: flex;
   flex-direction: column;
 
@@ -10,11 +10,5 @@
   .btn-group {
     display: flex;
     justify-content: space-between;
-  }
-
-  .btn-nobreak {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
   }
 }
