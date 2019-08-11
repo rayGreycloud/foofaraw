@@ -3,15 +3,28 @@ import 'firebase/firestore';
 import 'firebase/auth';
 
 // Firebase configuration
-const firebaseConfig = {
-  apiKey: 'AIzaSyATqqithDzuIRRBqmpaUiRGcKJz8FRhqi0',
-  authDomain: 'foofaraw-ed8f1.firebaseapp.com',
-  databaseURL: 'https://foofaraw-ed8f1.firebaseio.com',
-  projectId: 'foofaraw-ed8f1',
-  storageBucket: '',
-  messagingSenderId: '985348244555',
-  appId: '1:985348244555:web:78aa3f271dce0136'
+import { firebaseConfig } from '../secret.js';
+
+// const firebaseConfig = {
+//   apiKey: process.env.API_KEY,
+//   authDomain: process.env.AUTH_DOMAIN,
+//   databaseURL: process.env.DATABASE_URL,
+//   projectId: process.env.PROJECT_ID,
+//   storageBucket: process.env.STORAGE_BUCKET,
+//   messagingSenderId: process.env.MESSAGING_SENDER_ID,
+//   appId: process.env.APP_ID
+// };
+
+// Db methods
+export const createUserProfileDocument = async (userAuth, additionalData) => {
+  if (!userAuth) return;
+
+  const userRef = firestore.doc(`users/${userAuth}`);
+
+  const snapShot = await userRef.get();
+  console.log(snapShot);
 };
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
