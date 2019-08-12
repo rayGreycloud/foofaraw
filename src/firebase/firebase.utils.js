@@ -17,12 +17,31 @@ import { firebaseConfig } from '../secret.js';
 
 // Db methods
 export const createUserProfileDocument = async (userAuth, additionalData) => {
+  // exit function if no user
   if (!userAuth) return;
 
-  const userRef = firestore.doc(`users/${userAuth}`);
-
+  // check if user exists in db
+  const userRef = firestore.doc(`users/${userAuth.uid}`);
   const snapShot = await userRef.get();
-  console.log(snapShot);
+
+  // if no snapshot, then create user doc in db
+  if (!snapShot.exists) {
+    const { displayName, email } = userAuth;
+    const createdAt = new Date();
+
+    try {
+      await userRef.set({
+        displayName,
+        email,
+        createdAt,
+        ...additionalData
+      });
+    } catch (error) {
+      console.log('error creating user');
+    }
+  }
+
+  return userRef;
 };
 
 // Initialize Firebase
