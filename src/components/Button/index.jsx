@@ -1,12 +1,19 @@
 import React from 'react';
 
-const Button = ({ children, isGoogleSignIn, ...otherProps }) => (
-  <button
-    className={`${isGoogleSignIn ? 'google-sign-in' : ''} btn`}
-    {...otherProps}
-  >
-    {children}
-  </button>
-);
+const Button = ({
+  children,
+  invertedColors,
+  isGoogleSignIn,
+  ...otherProps
+}) => {
+  const buttonClasses = `btn ${invertedColors ? 'inverted-colors' : ''} ${
+    isGoogleSignIn ? 'google-sign-in' : ''
+  }`;
+  return (
+    <button className={buttonClasses} {...otherProps}>
+      {children}
+    </button>
+  );
+};
 
 export default Button;
