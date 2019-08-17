@@ -1,3 +1,4 @@
+@import 'variables';
 @import 'base';
 @import '../components/Button/button';
 @import '../components/CartDropdown/cart-dropdown';
@@ -11,5 +12,6 @@
 @import '../components/MenuItem/menu-item';
 @import '../components/Signin/signin';
 @import '../components/Signup/signup';
+@import '../pages/CheckoutPage/checkout-page';
 @import '../pages/HomePage/home-page';
 @import '../pages/SigninPage/signin-page';
