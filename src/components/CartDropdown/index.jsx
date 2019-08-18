@@ -7,8 +7,14 @@ import Button from '../Button';
 import CartItem from '../CartItem';
 
 import { selectCartItems } from '../../redux/cart/cart.selectors';
+import { toggleCartHidden } from '../../redux/cart/cart.actions';
 
-const CartDropdown = ({ cartItems, history }) => {
+const CartDropdown = ({ cartItems, history, dispatch }) => {
+  const handleClick = () => {
+    history.push('/checkout');
+    dispatch(toggleCartHidden());
+  };
+
   return (
     <div className='cart-dropdown'>
       <div className='cart-items'>
@@ -20,7 +26,7 @@ const CartDropdown = ({ cartItems, history }) => {
           <span className='empty-message'>Your cart is empty</span>
         )}
       </div>
-      <Button onClick={() => history.push('/checkout')}>GO TO CHECKOUT</Button>
+      <Button onClick={handleClick}>GO TO CHECKOUT</Button>
     </div>
   );
 };
