@@ -10,6 +10,11 @@ export const removeItemFromCart = item => ({
   payload: item
 });
 
+export const decreaseItemQty = item => ({
+  type: CartActionTypes.DECREASE_ITEM_QTY,
+  payload: item
+});
+
 export const toggleCartHidden = () => ({
   type: CartActionTypes.TOGGLE_CART_HIDDEN
 });
