@@ -1,19 +1,19 @@
 import { createSelector } from 'reselect';
 
-import { COLLECTION_ID_MAP } from '../constants';
-
 const selectShop = state => state.shop;
 
-export const selectShopCollections = createSelector(
+export const selectCollections = createSelector(
   [selectShop],
   shop => shop.collections
 );
 
+export const selectCollectionsForPreview = createSelector(
+  [selectCollections],
+  collections => Object.keys(collections).map(key => collections[key])
+);
+
 export const selectShopCollection = collectionUrlParam =>
   createSelector(
-    [selectShopCollections],
-    collections =>
-      collections.find(
-        collection => collection.id === COLLECTION_ID_MAP[collectionUrlParam]
-      )
+    [selectCollections],
+    collections => collections[collectionUrlParam]
   );
