@@ -3,7 +3,7 @@ import 'firebase/firestore';
 import 'firebase/auth';
 
 // Firebase configuration
-import { firebaseConfig } from '../secret.js';
+import { getFirebaseConfig } from './firebase.config.js';
 
 // const firebaseConfig = {
 //   apiKey: process.env.API_KEY,
@@ -45,7 +45,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 };
 
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(getFirebaseConfig());
 
 // Setup & export Firebase utils
 export const auth = firebase.auth();
