@@ -1,19 +1,8 @@
 import React from 'react';
 
-const Button = ({
-  children,
-  invertedColors,
-  isGoogleSignIn,
-  ...otherProps
-}) => {
-  const buttonClasses = `btn ${invertedColors ? 'inverted-colors' : ''} ${
-    isGoogleSignIn ? 'google-sign-in' : ''
-  }`;
-  return (
-    <button className={buttonClasses} {...otherProps}>
-      {children}
-    </button>
-  );
-};
+import { StyledButton } from './styled.button';
 
+const Button = ({ children, ...props }) => (
+  <StyledButton {...props}>{children}</StyledButton>
+);
 export default Button;
