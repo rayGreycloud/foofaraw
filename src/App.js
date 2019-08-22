@@ -8,6 +8,7 @@ import HomePage from './pages/HomePage/';
 import SigninPage from './pages/SigninPage';
 import ShopPage from './pages/ShopPage';
 import CheckoutPage from './pages/CheckoutPage';
+import { StyledApp } from './styled.app';
 
 import { selectCurrentUser } from './redux/user/user.selectors';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
@@ -44,7 +45,7 @@ class App extends Component {
     const { currentUser } = this.props;
 
     return (
-      <div className='App'>
+      <StyledApp>
         <Header />
         <Switch>
           <Route exact path='/' component={HomePage} />
@@ -56,7 +57,7 @@ class App extends Component {
             render={() => (currentUser ? <Redirect to='/' /> : <SigninPage />)}
           />
         </Switch>
-      </div>
+      </StyledApp>
     );
   }
 }
