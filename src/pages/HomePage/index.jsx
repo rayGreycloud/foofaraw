@@ -1,12 +1,13 @@
 import React from 'react';
 
+import { StyledHomePage } from './styled.home-page';
 import Directory from '../../components/Directory';
 
 const HomePage = () => {
   return (
-    <div className='home-page'>
+    <StyledHomePage>
       <Directory />
-    </div>
+    </StyledHomePage>
   );
 };
 
