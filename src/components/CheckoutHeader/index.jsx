@@ -1,5 +1,10 @@
 import React from 'react';
 
+import {
+  StyledCheckoutHeader,
+  StyledHeaderBlock
+} from './styled.checkout-header';
+
 const CheckoutHeader = () => {
   const headerBlocks = [
     'Product',
@@ -10,13 +15,13 @@ const CheckoutHeader = () => {
   ];
 
   return (
-    <div className='checkout-header'>
+    <StyledCheckoutHeader>
       {headerBlocks.map((blockName, idx) => (
-        <div className='header-block' key={idx}>
+        <StyledHeaderBlock key={idx}>
           <span>{blockName}</span>
-        </div>
+        </StyledHeaderBlock>
       ))}
-    </div>
+    </StyledCheckoutHeader>
   );
 };
 
