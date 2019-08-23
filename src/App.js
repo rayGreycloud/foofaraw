@@ -8,11 +8,11 @@ import HomePage from './pages/HomePage/';
 import SigninPage from './pages/SigninPage';
 import ShopPage from './pages/ShopPage';
 import CheckoutPage from './pages/CheckoutPage';
-import { StyledApp } from './styled.app';
 
 import { selectCurrentUser } from './redux/user/user.selectors';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { setCurrentUser } from './redux/user/user.actions';
+import { GlobalStyle } from './styled.global-style';
 
 class App extends Component {
   unsubscribeFromAuth = null;
@@ -45,7 +45,8 @@ class App extends Component {
     const { currentUser } = this.props;
 
     return (
-      <StyledApp>
+      <div>
+        <GlobalStyle />
         <Header />
         <Switch>
           <Route exact path='/' component={HomePage} />
@@ -57,7 +58,7 @@ class App extends Component {
             render={() => (currentUser ? <Redirect to='/' /> : <SigninPage />)}
           />
         </Switch>
-      </StyledApp>
+      </div>
     );
   }
 }
