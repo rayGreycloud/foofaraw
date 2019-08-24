@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const StyledCollectionPreview = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 30px;
 
   .title {
     font-size: 28px;
@@ -11,7 +10,8 @@ export const StyledCollectionPreview = styled.div`
   }
 
   .preview {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
   }
 `;
