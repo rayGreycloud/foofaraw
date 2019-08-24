@@ -1,6 +1,7 @@
 import React from 'react';
 
 import CollectionItem from '../CollectionItem';
+import { StyledCollectionPreview } from './styled.collection-preview';
 
 const CollectionPreview = ({ title, items }) => {
   const itemsToDisplay = items
@@ -8,10 +9,10 @@ const CollectionPreview = ({ title, items }) => {
     .map(item => <CollectionItem key={item.id} item={item} />);
 
   return (
-    <div className='collection-preview'>
+    <StyledCollectionPreview>
       <h1 className='title'>{title.toUpperCase()}</h1>
       <div className='preview'>{itemsToDisplay}</div>
-    </div>
+    </StyledCollectionPreview>
   );
 };
 
