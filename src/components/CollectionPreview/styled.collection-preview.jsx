@@ -5,8 +5,13 @@ export const StyledCollectionPreview = styled.div`
   flex-direction: column;
 
   .title {
+    width: max-content;
     font-size: 28px;
     margin-bottom: 25px;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .preview {
