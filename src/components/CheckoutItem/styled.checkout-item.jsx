@@ -4,10 +4,11 @@ export const StyledCheckoutItem = styled.div`
   width: 100%;
   display: flex;
   min-height: 100px;
-  border-bottom: 1px solid $dark_grey;
+  border-bottom: 1px solid var(--dark_grey);
   padding: 15px 0;
   font-size: 20px;
   align-items: center;
+  justify-content: space-between;
 `;
 
 export const StyledImageContainer = styled.div`
