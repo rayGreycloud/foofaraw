@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import FormInput from '../FormInput';
 import Button from '../Button';
+import { StyledSignin, StyledBtnGroup } from './styled.signin';
 
 import { auth, signInWithGoogle } from '../../firebase/firebase.utils';
 
@@ -39,7 +40,7 @@ export class Signin extends Component {
     const { email, password } = this.state;
 
     return (
-      <div className='sign-in'>
+      <StyledSignin>
         <h2 className='title'>I already have an account</h2>
         <span className='subtitle'>Sign in with your email and password</span>
 
@@ -60,16 +61,16 @@ export class Signin extends Component {
             value={password}
             required
           />
-          <div className='btn-group'>
+          <StyledBtnGroup>
             <Button style={{ marginRight: '6px' }} type='submit'>
               Sign In
             </Button>
             <Button isGoogleSignIn onClick={signInWithGoogle}>
               Sign In with Google
             </Button>
-          </div>
+          </StyledBtnGroup>
         </form>
-      </div>
+      </StyledSignin>
     );
   }
 }

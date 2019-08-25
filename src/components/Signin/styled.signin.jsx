@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledSignup = styled.div`
+export const StyledSignin = styled.div`
   width: 24rem;
   display: flex;
   flex-direction: column;
@@ -8,8 +8,13 @@ export const StyledSignup = styled.div`
   .title {
     margin: 10px 0;
   }
+`;
 
-  button {
+export const StyledBtnGroup = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  button:first-child {
     margin-right: 6px;
   }
 `;
