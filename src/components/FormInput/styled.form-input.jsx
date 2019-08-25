@@ -42,6 +42,7 @@ export const StyledFormInput = styled.input`
   border-radius: 0;
   border-bottom: 1px solid var(--grey);
   margin: 25px 0;
+  box-sizing: border-box;
 
   &:focus {
     outline: none;
