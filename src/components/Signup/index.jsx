@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import FormInput from '../FormInput';
 import Button from '../Button';
+import { StyledSignup, StyledForm } from './styled.signup';
 
 import { auth, createUserProfileDocument } from '../../firebase/firebase.utils';
 
@@ -55,11 +56,11 @@ export class Signup extends Component {
     const { displayName, email, password, confirmPassword } = this.state;
 
     return (
-      <div className='sign-up'>
+      <StyledSignup>
         <h2 className='title'>I do not have an account</h2>
         <span className='subtitle'>Sign up with your email and password</span>
 
-        <form className='sign-up-form' onSubmit={this.handleSubmit}>
+        <StyledForm onSubmit={this.handleSubmit}>
           <FormInput
             handleChange={this.handleChange}
             label='Display Name'
@@ -92,13 +93,12 @@ export class Signup extends Component {
             value={confirmPassword}
             required
           />
-          <div className='btn-group'>
-            <Button style={{ marginRight: '6px' }} type='submit'>
-              Sign Up
-            </Button>
-          </div>
-        </form>
-      </div>
+
+          <Button style={{ marginRight: '6px' }} type='submit'>
+            Sign Up
+          </Button>
+        </StyledForm>
+      </StyledSignup>
     );
   }
 }

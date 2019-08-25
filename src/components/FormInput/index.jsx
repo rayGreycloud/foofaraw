@@ -1,19 +1,24 @@
 import React from 'react';
 
-const FormInput = ({ handleChange, label, ...otherProps }) => {
-  const labelClasses = `${
-    otherProps.value.length ? 'shrink' : ''
-  } form-input-label`;
+import {
+  StyledFormGroup,
+  StyledFormInput,
+  StyledFormInputLabel
+} from './styled.form-input';
 
+const FormInput = ({ handleChange, label, ...otherProps }) => {
   return (
-    <div className='group'>
-      <input className='form-input' onChange={handleChange} {...otherProps} />
+    <StyledFormGroup>
+      <StyledFormInput onChange={handleChange} {...otherProps} />
       {label && (
-        <label className={labelClasses} htmlFor={otherProps.name}>
+        <StyledFormInputLabel
+          className={otherProps.value.length ? 'shrink' : ''}
+          htmlFor={otherProps.name}
+        >
           {label}
-        </label>
+        </StyledFormInputLabel>
       )}
-    </div>
+    </StyledFormGroup>
   );
 };
 
