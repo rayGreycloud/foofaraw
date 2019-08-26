@@ -1,13 +1,11 @@
-import styled, { css } from 'styled-components';
-
-const getBgImgUrl = props => props.imageUrl;
+import styled from 'styled-components';
 
 export const StyledBgImg = styled.div`
   width: 100%;
   height: 100%;
   background-size: cover;
   background-position: center;
-  background-image: url(${getBgImgUrl});
+  background-image: ${({ imageUrl }) => `url(${imageUrl})`};
 `;
 
 export const StyledContent = styled.div`
@@ -36,15 +34,9 @@ export const StyledContent = styled.div`
   }
 `;
 
-const largeSizeStyle = css`
-  height: 380px;
-`;
-
-const getSizeStyles = props => (props.size === 'large' ? largeSizeStyle : '');
-
 export const StyledMenuItem = styled.div`
   min-width: 30%;
-  height: 240px;
+  height: ${({ size }) => (size ? '380px' : '240px')};
   flex: 1 1 auto;
   display: flex;
   align-items: center;
@@ -52,8 +44,6 @@ export const StyledMenuItem = styled.div`
   border: 1px solid var(--almost_black);
   margin: 0 7.5px 15px;
   overflow: hidden;
-
-  ${getSizeStyles}
 
   &:first-child {
     margin-right: 7.5px;
