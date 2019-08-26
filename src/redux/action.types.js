@@ -8,3 +8,7 @@ export const CartActionTypes = {
 export const UserActionTypes = {
   SET_CURRENT_USER: 'SET_CURRENT_USER'
 };
+
+export const ShopActionTypes = {
+  UPDATE_COLLECTIONS: 'UPDATE_COLLECTIONS'
+};
