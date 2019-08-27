@@ -2,13 +2,14 @@ import React from 'react';
 
 import Signin from '../../components/Signin';
 import Signup from '../../components/Signup';
+import { StyledSigninPage } from './styled.signin-page';
 
 const SigninPage = () => {
   return (
-    <div className='sign-in-page'>
+    <StyledSigninPage>
       <Signin />
       <Signup />
-    </div>
+    </StyledSigninPage>
   );
 };
 
