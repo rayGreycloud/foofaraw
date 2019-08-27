@@ -9,8 +9,6 @@ import App from './App';
 import { store, persistor } from './redux/store';
 import * as serviceWorker from './serviceWorker';
 
-import './styles/style.scss';
-
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
