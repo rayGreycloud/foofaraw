@@ -5,7 +5,6 @@ import CollectionItem from '../CollectionItem';
 import { StyledCollectionPreview } from './styled.collection-preview';
 
 const CollectionPreview = ({ title, items, routeName, history, match }) => {
-  console.log(`${match.url}/${routeName}`);
   const itemsToDisplay = items
     .filter((item, idx) => idx < 4)
     .map(item => <CollectionItem key={item.id} item={item} />);
