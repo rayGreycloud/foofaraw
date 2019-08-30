@@ -1,4 +1,4 @@
-import { ShopActionTypes } from '../action.types';
+// import { ShopActionTypes } from '../action.types';
 import {
   FETCH_COLLECTIONS_START,
   FETCH_COLLECTIONS_SUCCESS,
@@ -10,10 +10,10 @@ import {
   convertCollectionsSnapshotToMap
 } from '../../firebase/firebase.utils';
 
-export const updateCollections = collectionsMap => ({
-  type: ShopActionTypes.UPDATE_COLLECTIONS,
-  payload: collectionsMap
-});
+// export const updateCollections = collectionsMap => ({
+//   type: ShopActionTypes.UPDATE_COLLECTIONS,
+//   payload: collectionsMap
+// });
 
 export const fetchCollectionsStart = () => ({
   type: FETCH_COLLECTIONS_START
