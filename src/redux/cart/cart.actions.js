@@ -1,20 +1,25 @@
-import { CartActionTypes } from '../action.types';
+import {
+  ADD_ITEM,
+  REMOVE_ITEM,
+  DECREASE_ITEM_QTY,
+  TOGGLE_CART_HIDDEN
+} from './cart.types';
 
 export const addItemToCart = item => ({
-  type: CartActionTypes.ADD_ITEM,
+  type: ADD_ITEM,
   payload: item
 });
 
 export const removeItemFromCart = item => ({
-  type: CartActionTypes.REMOVE_ITEM,
+  type: REMOVE_ITEM,
   payload: item
 });
 
 export const decreaseItemQty = item => ({
-  type: CartActionTypes.DECREASE_ITEM_QTY,
+  type: DECREASE_ITEM_QTY,
   payload: item
 });
 
 export const toggleCartHidden = () => ({
-  type: CartActionTypes.TOGGLE_CART_HIDDEN
+  type: TOGGLE_CART_HIDDEN
 });
