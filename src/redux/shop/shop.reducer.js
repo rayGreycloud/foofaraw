@@ -9,7 +9,7 @@ const {
 const INITIAL_STATE = {
   collections: null,
   isFetching: false,
-  errorMessage: ''
+  error: null
 };
 
 const shopReducer = (state = INITIAL_STATE, action) => {
@@ -29,7 +29,7 @@ const shopReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         isFetching: false,
-        errorMessage: action.payload
+        error: action.payload
       };
 
     default:

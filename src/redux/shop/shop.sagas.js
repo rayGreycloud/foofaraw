@@ -12,11 +12,7 @@ import {
 
 import { ShopActionTypes } from './shop.types';
 
-const {
-  FETCH_COLLECTIONS_START,
-  FETCH_COLLECTIONS_SUCCESS,
-  FETCH_COLLECTIONS_FAILURE
-} = ShopActionTypes;
+const { FETCH_COLLECTIONS_START } = ShopActionTypes;
 
 export function* fetchCollectionsAsync() {
   yield console.log('fetchCollectionsAsync fired!');
