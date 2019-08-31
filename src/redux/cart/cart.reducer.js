@@ -1,9 +1,4 @@
-import {
-  ADD_ITEM,
-  REMOVE_ITEM,
-  DECREASE_ITEM_QTY,
-  TOGGLE_CART_HIDDEN
-} from './cart.types';
+import { CartActionTypes } from './cart.types';
 import {
   addItemToCart,
   removeItemFromCart,
@@ -14,6 +9,13 @@ const INITIAL_STATE = {
   cartItems: [],
   isHidden: true
 };
+
+const {
+  ADD_ITEM,
+  REMOVE_ITEM,
+  DECREASE_ITEM_QTY,
+  TOGGLE_CART_HIDDEN
+} = CartActionTypes;
 
 const cartReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
