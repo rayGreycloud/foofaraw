@@ -4,10 +4,15 @@ export const StyledCollectionPage = styled.div`
   display: flex;
   flex-direction: column;
 
-  .title {
+  /* .title {
     font-size: 38px;
     margin: 0 auto 30px;
-  }
+  } */
+`;
+
+export const StyledTitle = styled.h1`
+  font-size: 38px;
+  margin: 0 auto 30px;
 `;
 
 export const StyledCollectionItems = styled.div`

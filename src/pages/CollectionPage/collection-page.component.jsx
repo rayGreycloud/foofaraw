@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import CollectionItem from '../../components/CollectionItem';
 import {
   StyledCollectionPage,
+  StyledTitle,
   StyledCollectionItems
 } from './styled.collection-page';
 
@@ -14,7 +15,7 @@ const CollectionPage = props => {
   const { items, title } = collection;
   return (
     <StyledCollectionPage>
-      <h1 className='title'>{title}</h1>
+      <StyledTitle>{title}</StyledTitle>
       <StyledCollectionItems>
         {items.map(item => (
           <CollectionItem key={item.id} item={item} />

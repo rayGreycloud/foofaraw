@@ -5,6 +5,8 @@ import CheckoutItem from '../../components/CheckoutItem';
 import StripeCheckoutButton from '../../components/StripeCheckoutButton';
 import {
   StyledCheckoutPage,
+  StyledCheckoutBtn,
+  StyledCheckoutTotal,
   StyledCheckoutItems,
   StyledTestWarning
 } from './styled.checkout-page';
@@ -17,11 +19,13 @@ const CheckoutPage = ({ cartItems, total }) => (
         <CheckoutItem key={cartItem.id} item={cartItem} />
       ))}
     </StyledCheckoutItems>
-    <div className='total'>
+    <StyledCheckoutTotal>
       <span>TOTAL ${total}</span>
-    </div>
+    </StyledCheckoutTotal>
+    <StyledCheckoutBtn>
+      <StripeCheckoutButton price={total} />
+    </StyledCheckoutBtn>
 
-    <StripeCheckoutButton price={total} />
     <StyledTestWarning>
       *Please use the following test credit card for payments*
       <br />
