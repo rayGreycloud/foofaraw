@@ -4,7 +4,9 @@ import { connect } from 'react-redux';
 import Button from '../Button';
 import {
   StyledCollectionItem,
-  StyledCollectionFooter
+  StyledCollectionItemFooter,
+  StyledCollectionItemName,
+  StyledCollectionItemPrice
 } from './styled.collection-item';
 
 import { addItemToCart } from '../../redux/cart/cart.actions';
@@ -20,10 +22,10 @@ const CollectionItem = ({ item, addItemToCart }) => {
           backgroundImage: `url(${imageUrl})`
         }}
       />
-      <StyledCollectionFooter>
-        <span className='name'>{name}</span>
-        <span className='price'>${price}</span>
-      </StyledCollectionFooter>
+      <StyledCollectionItemFooter>
+        <StyledCollectionItemName>{name}</StyledCollectionItemName>
+        <StyledCollectionItemPrice>${price}</StyledCollectionItemPrice>
+      </StyledCollectionItemFooter>
       <Button onClick={() => addItemToCart(item)} invertedColors>
         Add to cart
       </Button>

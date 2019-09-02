@@ -37,21 +37,21 @@ export const StyledCollectionItem = styled.div`
   }
 `;
 
-export const StyledCollectionFooter = styled.div`
+export const StyledCollectionItemFooter = styled.div`
   width: 100%;
   height: 5%;
   display: flex;
   justify-content: space-between;
   font-size: 1.1rem;
   font-weight: 400;
+`;
 
-  .name {
-    width: 88%;
-    margin-bottom: 15px;
-  }
+export const StyledCollectionItemName = styled.span`
+  width: 88%;
+  margin-bottom: 15px;
+`;
 
-  .price {
-    text-align: right;
-    width: 12%;
-  }
+export const StyledCollectionItemPrice = styled.span`
+  width: 12%;
+  text-align: right;
 `;
