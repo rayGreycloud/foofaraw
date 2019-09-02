@@ -15,6 +15,9 @@ import { getFirebaseConfig } from './firebase.config.js';
 //   appId: process.env.APP_ID
 // };
 
+// Initialize Firebase
+firebase.initializeApp(getFirebaseConfig());
+
 // Db methods
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   // exit function if no user
@@ -78,8 +81,14 @@ export const convertCollectionsSnapshotToMap = collections => {
   }, {});
 };
 
-// Initialize Firebase
-firebase.initializeApp(getFirebaseConfig());
+export const getCurrentUser = () => {
+  return new Promise((resolve, reject) => {
+    const unsubscribe = auth.onAuthStateChanged(userAuth => {
+      unsubscribe();
+      resolve(userAuth);
+    }, reject);
+  });
+};
 
 // Setup & export Firebase utils
 export const auth = firebase.auth();
