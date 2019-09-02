@@ -8,16 +8,22 @@ export const StyledCheckoutPage = styled.div`
   align-items: center;
   margin: 50px auto 0;
 
-  .total {
+  /* .total {
     margin-top: 30px;
     margin-left: auto;
     font-size: 36px;
-  }
+  } */
+`;
 
-  button {
-    margin-left: auto;
-    margin-top: 3.1rem;
-  }
+export const StyledCheckoutTotal = styled.div`
+  margin-top: 30px;
+  margin-left: auto;
+  font-size: 36px;
+`;
+
+export const StyledCheckoutBtn = styled.span`
+  margin-left: auto;
+  margin-top: 3.1rem;
 `;
 
 export const StyledCheckoutItems = styled.div`
