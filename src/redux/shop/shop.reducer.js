@@ -1,13 +1,15 @@
-import {
+import { ShopActionTypes } from './shop.types';
+
+const {
   FETCH_COLLECTIONS_START,
   FETCH_COLLECTIONS_SUCCESS,
   FETCH_COLLECTIONS_FAILURE
-} from './shop.types';
+} = ShopActionTypes;
 
 const INITIAL_STATE = {
   collections: null,
   isFetching: false,
-  errorMessage: ''
+  error: null
 };
 
 const shopReducer = (state = INITIAL_STATE, action) => {
@@ -27,7 +29,7 @@ const shopReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         isFetching: false,
-        errorMessage: action.payload
+        error: action.payload
       };
 
     default:

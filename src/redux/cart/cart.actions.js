@@ -1,9 +1,11 @@
-import {
+import { CartActionTypes } from './cart.types';
+
+const {
   ADD_ITEM,
   REMOVE_ITEM,
   DECREASE_ITEM_QTY,
   TOGGLE_CART_HIDDEN
-} from './cart.types';
+} = CartActionTypes;
 
 export const addItemToCart = item => ({
   type: ADD_ITEM,

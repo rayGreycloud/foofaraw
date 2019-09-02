@@ -15,6 +15,9 @@ import { getFirebaseConfig } from './firebase.config.js';
 //   appId: process.env.APP_ID
 // };
 
+// Initialize Firebase
+firebase.initializeApp(getFirebaseConfig());
+
 // Db methods
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   // exit function if no user
@@ -78,19 +81,25 @@ export const convertCollectionsSnapshotToMap = collections => {
   }, {});
 };
 
-// Initialize Firebase
-firebase.initializeApp(getFirebaseConfig());
+export const getCurrentUser = () => {
+  return new Promise((resolve, reject) => {
+    const unsubscribe = auth.onAuthStateChanged(userAuth => {
+      unsubscribe();
+      resolve(userAuth);
+    }, reject);
+  });
+};
 
 // Setup & export Firebase utils
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
 // Setup & export Google auth
-const provider = new firebase.auth.GoogleAuthProvider();
-provider.setCustomParameters({
+export const googleProvider = new firebase.auth.GoogleAuthProvider();
+googleProvider.setCustomParameters({
   prompt: 'select_account'
 });
-export const signInWithGoogle = () => auth.signInWithPopup(provider);
+export const signInWithGoogle = () => auth.signInWithPopup(googleProvider);
 
 // Export entire library
 export default firebase;
