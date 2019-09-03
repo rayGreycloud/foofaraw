@@ -14,7 +14,8 @@ const {
   ADD_ITEM,
   REMOVE_ITEM,
   DECREASE_ITEM_QTY,
-  TOGGLE_CART_HIDDEN
+  TOGGLE_CART_HIDDEN,
+  CLEAR_CART
 } = CartActionTypes;
 
 const cartReducer = (state = INITIAL_STATE, action) => {
@@ -38,6 +39,11 @@ const cartReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         isHidden: !state.isHidden
+      };
+    case CLEAR_CART:
+      return {
+        ...state,
+        cartItems: []
       };
 
     default:

@@ -4,7 +4,8 @@ const {
   ADD_ITEM,
   REMOVE_ITEM,
   DECREASE_ITEM_QTY,
-  TOGGLE_CART_HIDDEN
+  TOGGLE_CART_HIDDEN,
+  CLEAR_CART
 } = CartActionTypes;
 
 export const addItemToCart = item => ({
@@ -24,4 +25,8 @@ export const decreaseItemQty = item => ({
 
 export const toggleCartHidden = () => ({
   type: TOGGLE_CART_HIDDEN
+});
+
+export const clearCart = () => ({
+  type: CLEAR_CART
 });
