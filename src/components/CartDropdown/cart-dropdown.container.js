@@ -19,7 +19,7 @@ const mapStateToProps = createStructuredSelector({
 });
 
 const mapDispatchToProps = dispatch => ({
-  toggleCartHidden: () => dispatch(toggleCartHidden)
+  toggleCartHidden: () => dispatch(toggleCartHidden())
 });
 
 export default withRouter(
